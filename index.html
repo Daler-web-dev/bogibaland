@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bogibaland</title>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="./typeone.html">first type</a>
+        </li>
+    </ul>
+    <model-viewer
+        id="viewer"
+        src="typetwo.glb"
+        alt="3D стеклянный предмет"
+        camera-controls
+        auto-rotate
+        environment-image="neutral"
+        exposure="1"
+        style="width: 600px; height: 400px;">
+    </model-viewer>
+
+<!-- Подключаем библиотеку -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<script>
+  async function setColor(colorName) {
+    const viewer = document.querySelector('#viewer');
+    await viewer.updateComplete; // ждём загрузки
+
+    const colorMap = {
+      red: [1, 0, 0, 1],
+      green: [0, 1, 0, 1],
+      blue: [0, 0, 1, 1],
+    };
+
+    const color = colorMap[colorName];
+
+    const material = viewer.model.materials[1]; // используем первый материал
+    material.pbrMetallicRoughness.setBaseColorFactor(color);
+  }
+</script>
+</body>
+</html>
