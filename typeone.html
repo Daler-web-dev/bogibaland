@@ -33,7 +33,7 @@
         .header-content {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
         }
 
         .logo {
@@ -575,6 +575,7 @@
             .product-card {
                 left: 1rem;
                 right: 1rem;
+                bottom: -7.6rem;
             }
 
             .card-content {
@@ -617,15 +618,15 @@
 
                         <!-- 3D Bottle -->
                         <model-viewer
-                        id="viewer"
-                        src="typetwo.glb"
-                        alt="3D стеклянный предмет"
-                        camera-controls
-                        auto-rotate
-                        environment-image="neutral"
-                        exposure="1"
-                        style="width: 600px; height: 400px;">
-                    </model-viewer>
+                            id="viewer"
+                            src="typetwo.glb"
+                            alt="3D стеклянный предмет"
+                            camera-controls
+                            auto-rotate
+                            environment-image="neutral"
+                            exposure="1"
+                            style="width: 100%; height: 300px;">
+                        </model-viewer>
                 
                 <!-- Подключаем библиотеку -->
                 <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
@@ -639,10 +640,10 @@
                     <!-- Product Details Card -->
                     <div class="product-card">
                         <div class="card-content">
-                            <div class="card-item">
+                            <!-- <div class="card-item">
                                 <h4>Volume</h4>
                                 <p>500ml</p>
-                            </div>
+                            </div> -->
                             <div class="card-item">
                                 <h4>Type</h4>
                                 <p>Gazlangan</p>
