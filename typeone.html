@@ -4,18 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bogi Baland - Премиальная Минеральная Вода</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Nunito', sans-serif;
+
         }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
             color: #334155;
-            background: linear-gradient(135deg, #f8fafc 0%, #f0fdfa 100%);
+            background-color: #f9fdfc;
+            background-image: url('media/pattern.png');
+            background-repeat: no-repeat;
+            background-position: center top;
+            background-size: cover;
             min-height: 100vh;
         }
 
@@ -25,7 +32,6 @@
             padding: 0 1rem;
         }
 
-        /* Header */
         header {
             padding: 1.5rem 0;
         }
@@ -39,37 +45,13 @@
         .logo {
             width: 200px;
             height: 80px;
-            img {
-                width: 100%;
-                height: 100%;
-            }
         }
 
-        .logo-icon {
-            width: 3rem;
-            height: 3rem;
-            background: linear-gradient(135deg, #0d9488 0%, #2563eb 100%);
-            border-radius: 0.5rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.5rem;
+        .logo img {
+            width: 100%;
+            height: 100%;
         }
 
-        .logo-text h1 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #1e293b;
-            margin: 0;
-        }
-
-        .logo-text .website {
-            font-size: 0.75rem;
-            color: #64748b;
-        }
-
-        /* Main Content */
         main {
             padding: 2rem 0;
         }
@@ -81,14 +63,13 @@
             align-items: center;
         }
 
-        /* 3D Bottle Section */
         .bottle-section {
             position: relative;
         }
 
         .bottle-container {
             aspect-ratio: 1;
-            background: linear-gradient(135deg, #f0fdfa 0%, #eff6ff 100%);
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 1.5rem;
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
             display: flex;
@@ -96,263 +77,17 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
-            border: 1px solid #a7f3d0;
+
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2), inset 0 0 20px rgba(173, 216, 230, 0.25);
         }
 
-        .background-pattern {
-            position: absolute;
-            inset: 0;
-            opacity: 0.05;
-        }
-
-        .bg-circle-1 {
-            position: absolute;
-            top: 2.5rem;
-            left: 2.5rem;
-            width: 5rem;
-            height: 5rem;
-            background: #0d9488;
-            border-radius: 50%;
-        }
-
-        .bg-circle-2 {
-            position: absolute;
-            bottom: 5rem;
-            right: 2.5rem;
-            width: 4rem;
-            height: 4rem;
-            background: #2563eb;
-            border-radius: 50%;
-        }
-
-        .bg-circle-3 {
-            position: absolute;
-            top: 50%;
-            right: 5rem;
-            width: 3rem;
-            height: 3rem;
-            background: #22d3ee;
-            border-radius: 50%;
-        }
-
-        .bottle-3d {
-            text-align: center;
-            z-index: 10;
-        }
-
-        .bottle-model {
-            width: 7rem;
-            height: 13rem;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .bottle-cap {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 1.5rem;
-            height: 2rem;
-            background: linear-gradient(to bottom, #94a3b8, #64748b);
-            border-radius: 0.5rem 0.5rem 0 0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-        }
-
-        .bottle-neck {
-            position: absolute;
-            top: 1.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 2rem;
-            height: 3rem;
-            background: linear-gradient(to bottom, #f1f5f9, white);
-            border-radius: 0.5rem;
-            border: 1px solid #e2e8f0;
-            box-shadow: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-        }
-
-        .bottle-body {
-            position: absolute;
-            top: 4rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 6rem;
-            height: 8rem;
-            background: linear-gradient(to bottom, white, #f8fafc);
-            border-radius: 0.5rem;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-
-        .bottle-label {
-            position: absolute;
-            top: 1rem;
-            left: 0.5rem;
-            right: 0.5rem;
-            height: 5rem;
-            background: linear-gradient(to right, #0d9488, #2563eb);
-            border-radius: 0.375rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            color: white;
-        }
-
-        .label-brand {
-            font-size: 0.5rem;
-            font-weight: bold;
-        }
-
-        .label-type {
-            font-size: 0.375rem;
-            margin-top: 0.25rem;
-        }
-
-        .label-carbonated {
-            font-size: 0.375rem;
-        }
-
-        .label-volume {
-            font-size: 0.4375rem;
-            font-weight: 600;
-            margin-top: 0.25rem;
-        }
-
-        .water-effect {
-            position: absolute;
-            bottom: 0.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 5rem;
-            height: 6rem;
-            background: linear-gradient(to top, #22d3ee, #67e8f9);
-            border-radius: 0.5rem;
-            opacity: 0.4;
-        }
-
-        .bubble {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-        }
-
-        .bubble-1 {
-            top: 5rem;
-            left: 2rem;
-            width: 0.375rem;
-            height: 0.375rem;
-            opacity: 0.8;
-            animation: pulse 2s infinite;
-        }
-
-        .bubble-2 {
-            top: 6rem;
-            right: 2rem;
-            width: 0.25rem;
-            height: 0.25rem;
-            opacity: 0.7;
-            animation: bounce 1s infinite;
-        }
-
-        .bubble-3 {
-            top: 7rem;
-            left: 2.5rem;
-            width: 0.125rem;
-            height: 0.125rem;
-            opacity: 0.6;
-        }
-
-        .model-text {
-            margin-top: 1rem;
-        }
-
-        .model-3d {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: #cbd5e1;
-        }
-
-        .model-subtitle {
-            color: #64748b;
-            font-size: 0.75rem;
-            margin-top: 0.5rem;
-        }
-
-        .floating-elements {
-            position: absolute;
-        }
-
-        .float-1 {
-            top: 2rem;
-            right: 2rem;
-            width: 0.75rem;
-            height: 0.75rem;
-            background: #22d3ee;
-            border-radius: 50%;
-            opacity: 0.6;
-            animation: bounce 2s infinite;
-        }
-
-        .float-2 {
-            bottom: 3rem;
-            left: 2rem;
-            width: 0.5rem;
-            height: 0.5rem;
-            background: #60a5fa;
-            border-radius: 50%;
-            opacity: 0.5;
-            animation: pulse 3s infinite;
-        }
-
-        /* Product Details Card */
-        .product-card {
-            position: absolute;
-            bottom: -1.5rem;
-            left: 1.5rem;
-            right: 1.5rem;
-            background: white;
-            border-radius: 1rem;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-            padding: 1.5rem;
-            border: 1px solid #f1f5f9;
-        }
-
-        .card-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.875rem;
-        }
-
-        .card-item h4 {
-            color: #64748b;
-            font-size: 0.875rem;
-            font-weight: normal;
-            margin-bottom: 0.25rem;
-        }
-
-        .card-item p {
-            font-size: 1.125rem;
-            font-weight: 600;
-            margin: 0;
-        }
-
-        .card-item:nth-child(2) p {
-            color: #0d9488;
-        }
-
-        .card-item:nth-child(3) p {
-            color: #2563eb;
-        }
-
-        /* Product Info Section */
-        .product-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
+        model-viewer {
+            width: 100%;
+            height: 300px;
         }
 
         .badge {
@@ -394,7 +129,6 @@
             line-height: 1.6;
         }
 
-        /* Features Grid */
         .features-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -442,96 +176,6 @@
             color: #374151;
         }
 
-        /* Company Info */
-        .company-info {
-            margin-top: 4rem;
-            text-align: center;
-        }
-
-        .company-main {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: #64748b;
-            margin-bottom: 1rem;
-        }
-
-        .company-details {
-            font-size: 0.75rem;
-            color: #94a3b8;
-        }
-
-        /* Additional Info */
-        .additional-info {
-            margin-top: 4rem;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-        }
-
-        .info-item {
-            text-align: center;
-        }
-
-        .info-icon {
-            width: 4rem;
-            height: 4rem;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1rem auto;
-            font-size: 2rem;
-        }
-
-        .info-icon.teal {
-            background: #ccfbf1;
-            color: #0d9488;
-        }
-
-        .info-icon.blue {
-            background: #dbeafe;
-            color: #2563eb;
-        }
-
-        .info-icon.green {
-            background: #dcfce7;
-            color: #16a34a;
-        }
-
-        .info-title {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1e293b;
-            margin-bottom: 1rem;
-        }
-
-        .info-description {
-            color: #64748b;
-            line-height: 1.6;
-        }
-
-        /* Animations */
-        @keyframes bounce {
-            0%, 100% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-25%);
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.5;
-            }
-        }
-
-        /* Responsive Design */
         @media (max-width: 1024px) {
             .main-grid {
                 grid-template-columns: 1fr;
@@ -548,11 +192,6 @@
         }
 
         @media (max-width: 768px) {
-            .additional-info {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
             .features-grid {
                 grid-template-columns: 1fr;
             }
@@ -560,63 +199,25 @@
             .product-title {
                 font-size: 1.75rem;
             }
-
-            .company-main {
-                flex-direction: column;
-                gap: 0.25rem;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .container {
-                padding: 0 0.75rem;
-            }
-
-            /* .product-card {
-                left: 1rem;
-                right: 1rem;
-                bottom: -7.6rem;
-            } */
-
-            .card-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .card-item {
-                text-align: center;
-            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <!-- <div class="logo-icon">💧</div> -->
-                     <img src="logo.svg" alt="">
+                    <img src="logo.svg" alt="">
                 </div>
             </div>
         </div>
     </header>
 
-    <!-- Main Content -->
     <main>
         <div class="container">
             <div class="main-grid">
-                <!-- 3D Bottle Visualization -->
                 <div class="bottle-section">
                     <div class="bottle-container">
-                        <!-- Background Pattern -->
-                        <div class="background-pattern">
-                            <div class="bg-circle-1"></div>
-                            <div class="bg-circle-2"></div>
-                            <div class="bg-circle-3"></div>
-                        </div>
-
-                        <!-- 3D Bottle -->
                         <model-viewer
                             id="viewer"
                             src="typetwo.glb"
@@ -624,27 +225,14 @@
                             camera-controls
                             auto-rotate
                             environment-image="neutral"
-                            exposure="1"
-                            style="width: 100%; height: 300px;">
+                            exposure="1">
                         </model-viewer>
-                
-                <!-- Подключаем библиотеку -->
-                <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-                
-
-                        <!-- Floating Elements -->
-                        <div class="floating-elements float-1"></div>
-                        <div class="floating-elements float-2"></div>
                     </div>
-
-                    <!-- Product Details Card -->
-                 
                 </div>
 
-                <!-- Product Info -->
                 <div class="product-info">
                     <div>
-                    <div class="badge">Натуральная Минеральная Вода</div>
+                        <div class="badge">Натуральная Минеральная Вода</div>
                         <h1 class="product-title">
                             <span class="title-brand">Bogi Baland</span>
                             <span class="title-product">Минеральная Вода</span>
@@ -653,10 +241,9 @@
                     </div>
 
                     <p class="product-description">
-                        Премиальная артезианская минеральная вода из Узбекистана. Натурально газированная с необходимыми минералами для идеального вкуса и пользы для здоровья.
+                        Премиальная артезианская минеральная вода из Узбекистана. Натурально газированная с необходимыми минералами для идеального вкуса и пользы.
                     </p>
 
-                    <!-- Features -->
                     <div class="features-grid">
                         <div class="feature-item">
                             <div class="feature-icon teal">✨</div>
@@ -677,37 +264,9 @@
                     </div>
                 </div>
             </div>
-
-            <!-- Company Info -->
-            <div class="company-info">
-                <div class="company-main">
-                    <span>🌍</span>
-                    <span>ООО "Bogi Baland Beverage" • Самарканд, Узбекистан</span>
-                </div>
-                <p class="company-details">
-                    Проверено лабораторией SGS Institut Fresenius • Рег. №: 0360510 • +99866 230 0220
-                </p>
-            </div>
-
-            <!-- Additional Info -->
-            <div class="additional-info">
-                <div class="info-item">
-                    <div class="info-icon teal">💧</div>
-                    <h3 class="info-title">Артезианский Источник</h3>
-                    <p class="info-description">Чистая артезианская вода из природных подземных источников Узбекистана.</p>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon blue">🏆</div>
-                    <h3 class="info-title">Сертификация SGS</h3>
-                    <p class="info-description">Качество проверено и сертифицировано лабораторией SGS Institut Fresenius.</p>
-                </div>
-                <div class="info-item">
-                    <div class="info-icon green">✨</div>
-                    <h3 class="info-title">Богата Минералами</h3>
-                    <p class="info-description">Общее содержание минералов 407 мг/л, включая необходимые кальций и магний.</p>
-                </div>
-            </div>
         </div>
     </main>
+
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </body>
 </html>
